@@ -16,7 +16,7 @@ Este projeto tem a função de realizar uma transferência entre contas, gerando
 Clone o projeto
 
 ```bash
-  git clone https://link-para-o-projeto
+  git clone https://github.com/juanfeltrin-dev/bank-transfer.git
 ```
 
 Entre no diretório do projeto
