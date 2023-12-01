@@ -1,0 +1,31 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table transactions {
+  id integer [primary key]
+  payee_id integer
+  payer_id integer
+  amount int 
+  status int 
+}
+
+Table users {
+  id integer [primary key]
+  name varchar
+  email varchar
+  document varchar
+  password varchar
+}
+
+Table wallets {
+  id integer [primary key]
+  user_id integer
+  active int
+  pending int
+}
+
+Ref: transactions.payee_id > users.id
+
+Ref: transactions.payer_id > users.id
+
+Ref: wallets.user_id - users.id

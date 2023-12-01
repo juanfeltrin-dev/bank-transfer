@@ -1,0 +1,26 @@
+version: '3.0'
+
+services:
+  mysql:
+    image: mysql:8.2.0
+    environment:
+      MYSQL_DATABASE: 'bank'
+      MYSQL_USER: 'default'
+      MYSQL_PASSWORD: '12345'
+      MYSQL_ROOT_PASSWORD: '12345'
+    ports:
+      - '3306:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+  php:
+    build: .
+    ports:
+      - "9501:9501"
+    volumes:
+      - ./:/var/www/html
+    command: >
+        sh -c "php bin/hyperf.php migrate && php bin/hyperf.php start"
+    depends_on:
+      - mysql
+volumes:
+  my-db:
