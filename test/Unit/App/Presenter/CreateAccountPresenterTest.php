@@ -24,6 +24,6 @@ class CreateAccountPresenterTest extends TestCase
         $result = $createAccountPresenter->present($createAccountResponseModel);
 
         // assert
-        $this->assertSame(100.00, $result['balance']);
+        $this->assertSame(10000, $result['balance']);
     }
 }

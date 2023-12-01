@@ -13,7 +13,7 @@ class CreateAccountPresenter
         return [
             'id' => $createAccountResponseModel->id,
             'name' => $createAccountResponseModel->name,
-            'balance' => (float) substr_replace($createAccountResponseModel->balance, '.', -2, 0),
+            'balance' => $createAccountResponseModel->balance,
         ];
     }
 }
