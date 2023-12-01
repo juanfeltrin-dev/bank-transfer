@@ -55,7 +55,7 @@ class DebitAccountListener implements ListenerInterface
             }
 
             $sumAmountFromTransactions = $this->transactionRepository->sumAmount($payer->getID());
-            
+
             $this->accountRepository->updateBalance($payer->getID(), $sumAmountFromTransactions);
             $this->logger->info('The payer was debited', [
                 'transactionID' => $transaction->getID(),

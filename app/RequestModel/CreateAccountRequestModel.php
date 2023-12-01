@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\RequestModel;
+
 class CreateAccountRequestModel
 {
     public function __construct(

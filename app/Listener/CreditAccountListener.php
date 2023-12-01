@@ -42,7 +42,7 @@ class CreditAccountListener implements ListenerInterface
         $payer = $event->payer;
         $payee = $event->payee;
         $amount = $event->amount;
-        
+
         $this->database->beginTransaction();
         try {
             $transaction = $this->transactionRepository->create($payee, $payer, $amount, TransactionType::Credit);
@@ -51,7 +51,7 @@ class CreditAccountListener implements ListenerInterface
                 'accountID' => $payee->getID(),
             ]);
             $sumAmountFromTransactions = $this->transactionRepository->sumAmount($payee->getID());
-            $this->accountRepository->updateBalance($payee->getID(), $sumAmountFromTransactions);    
+            $this->accountRepository->updateBalance($payee->getID(), $sumAmountFromTransactions);
             $this->logger->info('The payee was credited', [
                 'transactionID' => $transaction->getID(),
                 'from' => $payer->getID(),

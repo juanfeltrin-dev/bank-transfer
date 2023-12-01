@@ -9,10 +9,10 @@ use App\Entity\Account;
 use App\Enum\AccountType;
 use App\Exception\ResourceNotFoundException;
 use App\RequestModel\CreateAccountRequestModel;
-use Ramsey\Uuid\Uuid;
 use App\Util\Crypt;
-use App\Util\Hash;
 use App\Util\Date;
+use App\Util\Hash;
+use Ramsey\Uuid\Uuid;
 
 class AccountRepository implements AccountRepositoryInterface
 {
@@ -57,7 +57,7 @@ class AccountRepository implements AccountRepositoryInterface
         $dateNow = $this->date->get();
 
         $this->database->insert(
-            'INSERT INTO accounts (id, name, email, document, password, balance, type, created_at, updated_at) ' . 
+            'INSERT INTO accounts (id, name, email, document, password, balance, type, created_at, updated_at) ' .
             'VALUES(:id, :name, :email, :document, :password, :balance, :type, :created_at, :updated_at)',
             [
                 'id' => $accountID,

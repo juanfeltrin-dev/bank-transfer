@@ -7,10 +7,7 @@ namespace App\Enum;
 enum TransactionType: int
 {
     case Credit = 1;
-
     case Debit = 2;
-
     case Refund = 3;
-
     case First = 4;
 }

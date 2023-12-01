@@ -22,9 +22,9 @@ class CreateTransactionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'payer' =>'required|string|max:255',
-            'payee' =>'required|string|max:255',
-            'amount' =>'required|integer|gt:0',
+            'payer' => 'required|string|max:255',
+            'payee' => 'required|string|max:255',
+            'amount' => 'required|integer|gt:0',
         ];
     }
 }

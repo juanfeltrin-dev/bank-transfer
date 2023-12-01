@@ -46,7 +46,7 @@ class TransactionFailedListener implements ListenerInterface
             $transaction = $this->transactionRepository->create($payer, $payee, $amount, TransactionType::Refund);
             $sumAmountFromTransactions = $this->transactionRepository->sumAmount($payer->getID());
             $this->accountRepository->updateBalance($payer->getID(), $sumAmountFromTransactions);
-    
+
             $this->logger->info('The payee was credited', ['transactionID' => $transaction->getID()]);
             $this->database->commit();
         } catch (Throwable $exception) {

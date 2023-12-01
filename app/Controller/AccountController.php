@@ -28,7 +28,7 @@ class AccountController extends AbstractController
             $this->request->input('type'),
             $this->request->input('balance'),
         );
-        
+
         $createAccountResponseModel = $this->accountService->create($requestModel);
 
         return $this->createAccountPresenter->present($createAccountResponseModel);

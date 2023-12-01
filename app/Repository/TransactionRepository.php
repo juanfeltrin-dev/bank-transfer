@@ -46,7 +46,8 @@ class TransactionRepository implements TransactionRepositoryInterface
     public function sumAmount(string $accountID): int
     {
         $result = $this->database->selectOne(
-            'SELECT sum(amount) as sumAmount FROM transactions WHERE account_id = :account_id', [
+            'SELECT sum(amount) as sumAmount FROM transactions WHERE account_id = :account_id',
+            [
                 'account_id' => $accountID,
             ]
         );
