@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\App\Listener;
 
 use App\Adapter\Database\DatabaseInterface;
@@ -13,8 +15,8 @@ use App\Listener\TransactionFailedListener;
 use App\Repository\AccountRepositoryInterface;
 use App\Repository\TransactionRepositoryInterface;
 use Exception;
-use PHPUnit\Framework\TestCase;
 use Mockery as m;
+use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
 class TransactionFailedListenerTest extends TestCase
@@ -73,7 +75,7 @@ class TransactionFailedListenerTest extends TestCase
         // assert
         $this->assertTrue(true);
     }
-    
+
     public function testShouldRollbackTransactionWhenThrowException(): void
     {
         // arrange
@@ -103,7 +105,7 @@ class TransactionFailedListenerTest extends TestCase
             10000,
             AccountType::NaturalPerson
         );
-        
+
         $event = new TransactionFailedEvent($payerAccount, $payeeAccount, $amount);
 
         $database->shouldReceive('beginTransaction');

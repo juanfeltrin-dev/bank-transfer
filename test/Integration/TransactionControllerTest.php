@@ -9,11 +9,11 @@ use App\Enum\AccountType;
 use App\Repository\AccountRepositoryInterface;
 use App\RequestModel\CreateAccountRequestModel;
 use App\Service\AccountServiceInterface;
+use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
 use Hyperf\Context\ApplicationContext;
 use Hyperf\Testing\Http\Client as ClientTestingHttp;
 

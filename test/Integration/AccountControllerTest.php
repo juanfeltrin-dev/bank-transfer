@@ -12,7 +12,7 @@ class AccountControllerTest extends TestCase
     {
         // arrange
         $database = make(DatabaseInterface::class);
-        
+
         // act
         $response = $this->client->request('post', '/accounts', [
             'form_params' => [

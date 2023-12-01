@@ -10,8 +10,8 @@ use App\Exception\ResourceNotFoundException;
 use App\Repository\AccountRepository;
 use App\RequestModel\CreateAccountRequestModel;
 use App\Util\Crypt;
-use App\Util\Hash;
 use App\Util\Date;
+use App\Util\Hash;
 use DateTime;
 use Mockery as m;
 use Ramsey\Uuid\Uuid;
@@ -50,7 +50,7 @@ class AccountRepositoryTest extends TestCase
         $hash->shouldReceive('hash')->with($createAccountRequestModel->getPassword())->andReturn('passwordhashed');
         $date->shouldReceive('get')->andReturn($dateTime);
         $database->shouldReceive('insert')->with(
-            'INSERT INTO accounts (id, name, email, document, password, balance, type, created_at, updated_at) ' . 
+            'INSERT INTO accounts (id, name, email, document, password, balance, type, created_at, updated_at) ' .
             'VALUES(:id, :name, :email, :document, :password, :balance, :type, :created_at, :updated_at)',
             [
                 'id' => $accountID,
@@ -92,7 +92,7 @@ class AccountRepositoryTest extends TestCase
             'email' => 'fulano@gmail.com',
             'document' => '000000000',
             'balance' => 1000,
-            'type' => 1
+            'type' => 1,
         ]);
 
         // act

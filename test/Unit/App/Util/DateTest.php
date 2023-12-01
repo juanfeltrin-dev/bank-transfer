@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\App\Util;
-use PHPUnit\Framework\TestCase;
+
 use App\Util\Date;
+use PHPUnit\Framework\TestCase;
 
 class DateTest extends TestCase
 {

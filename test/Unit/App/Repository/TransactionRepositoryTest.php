@@ -77,7 +77,7 @@ class TransactionRepositoryTest extends TestCase
         $this->assertSame($transactionID, $result->getID());
         $this->assertSame(TransactionType::Credit, $result->getType());
     }
-    
+
     public function testShouldGetSumAmount(): void
     {
         // arrange
@@ -87,10 +87,10 @@ class TransactionRepositoryTest extends TestCase
 
         $accountID = 'a4fa6905-3557-4980-a637-f82e3fea232f';
 
-
         $database->shouldReceive('selectOne')
             ->with(
-                'SELECT sum(amount) as sumAmount FROM transactions WHERE account_id = :account_id', [
+                'SELECT sum(amount) as sumAmount FROM transactions WHERE account_id = :account_id',
+                [
                     'account_id' => $accountID,
                 ]
             )->andReturn((object) [
@@ -103,7 +103,7 @@ class TransactionRepositoryTest extends TestCase
         // assert
         $this->assertSame(1000, $result);
     }
-    
+
     public function testShouldGetSumAmountWhenAmountIsNullThenReturnZero(): void
     {
         // arrange
@@ -113,10 +113,10 @@ class TransactionRepositoryTest extends TestCase
 
         $accountID = 'a4fa6905-3557-4980-a637-f82e3fea232f';
 
-
         $database->shouldReceive('selectOne')
             ->with(
-                'SELECT sum(amount) as sumAmount FROM transactions WHERE account_id = :account_id', [
+                'SELECT sum(amount) as sumAmount FROM transactions WHERE account_id = :account_id',
+                [
                     'account_id' => $accountID,
                 ]
             )->andReturn(null);

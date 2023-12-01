@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Integration;
 
 use Hyperf\Testing\Http\Client as ClientTestingHttp;
@@ -7,7 +9,7 @@ use Hyperf\Testing\Http\Client as ClientTestingHttp;
 class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected ClientTestingHttp $client;
-    
+
     public function __construct($name = null, $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\App\Listener;
 
 use App\Entity\Account;
@@ -7,8 +9,8 @@ use App\Enum\AccountType;
 use App\Event\CreditAuthorizedPayeeEvent;
 use App\Listener\NotifyPayeeListener;
 use App\Service\NotificationServiceInterface;
-use PHPUnit\Framework\TestCase;
 use Mockery as m;
+use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
 class NotifyPayeeListenerTest extends TestCase

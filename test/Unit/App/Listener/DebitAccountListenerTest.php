@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\App\Listener;
+
 use App\Adapter\Database\DatabaseInterface;
 use App\Entity\Account;
 use App\Entity\Transaction;
@@ -14,8 +17,8 @@ use App\Listener\DebitAccountListener;
 use App\Repository\AccountRepositoryInterface;
 use App\Repository\TransactionRepositoryInterface;
 use App\Service\AuthorizationServiceInterface;
-use PHPUnit\Framework\TestCase;
 use Mockery as m;
+use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
 class DebitAccountListenerTest extends TestCase
@@ -85,7 +88,7 @@ class DebitAccountListenerTest extends TestCase
         $this->assertSame($transaction->getReferenceAccount(), $payeeAccount);
         $this->assertSame($transaction->getAmount(), $amount * 1);
     }
-    
+
     public function testShouldApplyRollbackWhenAuthorizationDenied(): void
     {
         // arrange

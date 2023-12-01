@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\App\Listener;
+
 use App\Adapter\Database\DatabaseInterface;
 use App\Entity\Account;
 use App\Entity\Transaction;
@@ -14,8 +17,8 @@ use App\Listener\CreditAccountListener;
 use App\Repository\AccountRepositoryInterface;
 use App\Repository\TransactionRepositoryInterface;
 use Exception;
-use PHPUnit\Framework\TestCase;
 use Mockery as m;
+use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
 class CreditAccountListenerTest extends TestCase
@@ -83,7 +86,7 @@ class CreditAccountListenerTest extends TestCase
         // assert
         $this->assertTrue(true);
     }
-    
+
     public function testShouldDispatchTransactionFailedEventWhenThrowException(): void
     {
         // arrange

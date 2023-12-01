@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Unit\App\Service;
 
 use App\Client\Http\NotificationClient;
-use App\Entity\Account;
-use App\Entity\User;
-use App\Enum\AccountType;
-use App\Enum\UserType;
 use App\Service\NotificationService;
 use Mockery as m;
 use Unit\TestCase;

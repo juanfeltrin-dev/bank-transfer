@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\App\Service;
+
 use App\Entity\Account;
 use App\Enum\AccountType;
 use App\Enum\TransactionType;
@@ -8,8 +11,8 @@ use App\Repository\AccountRepositoryInterface;
 use App\Repository\TransactionRepositoryInterface;
 use App\RequestModel\CreateAccountRequestModel;
 use App\Service\AccountService;
-use Unit\TestCase;
 use Mockery as m;
+use Unit\TestCase;
 
 class AccountServiceTest extends TestCase
 {
@@ -38,7 +41,7 @@ class AccountServiceTest extends TestCase
         // assert
         $this->assertSame($account, $result);
     }
-    
+
     public function testShouldCreateAccount(): void
     {
         // arrange
